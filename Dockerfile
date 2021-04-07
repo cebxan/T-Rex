@@ -4,7 +4,7 @@ WORKDIR /tmp
 
 RUN mkdir t-rex \
     && apt update \
-    && apt install tar wget -y --no-install-recommends \
+    && apt install tar wget ca-certificates -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/trexminer/T-Rex/releases/download/0.19.14/t-rex-0.19.14-linux-cuda11.1.tar.gz && \
