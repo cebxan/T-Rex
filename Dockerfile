@@ -7,8 +7,8 @@ RUN mkdir t-rex \
     && apt install tar wget ca-certificates -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/trexminer/T-Rex/releases/download/0.19.14/t-rex-0.19.14-linux-cuda11.1.tar.gz && \
-    tar xf t-rex-0.19.14-linux-cuda11.1.tar.gz -C t-rex
+RUN wget https://github.com/trexminer/T-Rex/releases/download/0.20.0/t-rex-0.20.0-linux.tar.gz && \
+    tar xf t-rex-0.20.0-linux.tar.gz -C t-rex
 
 
 FROM nvidia/cuda:11.2.2-base
