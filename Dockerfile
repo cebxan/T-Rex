@@ -13,7 +13,7 @@ RUN wget https://github.com/trexminer/T-Rex/releases/download/0.20.0/t-rex-0.20.
 
 FROM nvidia/cuda:11.2.2-base
 
-LABEL maintainer="Dockminer"
+LABEL maintainer="Carlos Berroteran (cebxan)"
 
 LABEL org.opencontainers.image.source https://github.com/dockminer/T-Rex
 
