@@ -25,7 +25,11 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1 /usr/lib/x86_64-linux-gnu/
 ARG DEBIAN_FRONTEND="noninteractive"
 
 RUN apt update \
-    && apt install -y --no-install-recommends tzdata \
+    && apt install -y --no-install-recommends \
+    tzdata \
+    curl \
+    wget \
+    jq \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /tmp/t-rex/t-rex /usr/local/bin/t-rex
