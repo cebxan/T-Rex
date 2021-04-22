@@ -28,7 +28,6 @@ RUN apt update \
     && apt install -y --no-install-recommends \
     tzdata \
     curl \
-    wget \
     jq \
     && rm -rf /var/lib/apt/lists/*
 
@@ -37,5 +36,8 @@ COPY --from=builder /tmp/t-rex/t-rex /usr/local/bin/t-rex
 EXPOSE 4067 4068
 
 ENV TZ America/Caracas
+
+HEALTHCHECK --interval=30s --timeout=30s --start-period=60s --retries=3 CMD \
+    curl localhost:4067/summary | jq -e 'any(.paused;.==false)' || exit 1
 
 ENTRYPOINT [ "t-rex" ]
