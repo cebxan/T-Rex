@@ -17,9 +17,6 @@ LABEL maintainer="Carlos Berroteran (cebxan)"
 
 LABEL org.opencontainers.image.source https://github.com/dockminer/T-Rex
 
-# Create config foler
-RUN mkdir -p /etc/config
-
 # Fix Driver bug
 RUN ln -s /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1 /usr/lib/x86_64-linux-gnu/libnvidia-ml.so
 
