@@ -2,7 +2,7 @@ FROM ubuntu:20.04 AS builder
 
 WORKDIR /tmp
 
-ARG TREX_VERSION="0.20.1"
+ARG TREX_VERSION="0.20.3"
 
 RUN mkdir t-rex \
     && apt update \
@@ -13,7 +13,7 @@ RUN wget https://github.com/trexminer/T-Rex/releases/download/${TREX_VERSION}/t-
     && tar xf t-rex-${TREX_VERSION}-linux.tar.gz -C t-rex
 
 
-FROM nvidia/cuda:11.2.2-base
+FROM nvidia/cuda:11.3.0-base
 
 LABEL maintainer="Carlos Berroteran (cebxan)"
 
